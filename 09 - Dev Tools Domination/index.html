@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+
+    console.log('hej');
+
+    // Interpolated
+
+    console.log('hej to ja %s Tylenda', 'Kacper');
+
+    // Styled
+
+    console.log('hej to ja %c Kacper Tylenda', 'font-size: 20px; color: #bada55');
+
+    // warning!
+
+    console.warn('blaaaaa');
+
+    // Error :|
+
+    console.error('blurb!');
+
+    // Info
+
+    console.info('Kacper jest ok');
+
+    // Testing
+
+    console.assert(2===3, 'pomylka!');
+
+    // clearing
+
+    console.clear();
+
+    // Viewing DOM Elements
+
+    const p = document.querySelector('p');
+    console.log(p);
+    console.dir(p); //gives access to properties and methods avaliable for dom element.
+
+    // Grouping together
+
+    dogs.forEach(dog => {
+      console.group(`${dog.name}`);
+      // console.groupCollapsed(`${dog.name}`);
+      console.log(`To jest ${dog.name}`);
+      console.log(`${dog.name} do tej pory przezyl ${dog.age}`);
+      console.groupEnd(`${dog.name}`);
+    })
+
+    // counting
+
+    console.count('kacper');
+    console.count('kacper');
+    console.count('tylenda');
+    console.count('kacper');
+    console.count('tylenda');
+    console.count('kacper');
+    console.count('kacper');
+    console.count('tylenda');
+    console.count('tylenda');
+    console.count('tylenda');
+    console.count('tylenda');
+
+    // timing
+
+    console.time('nazwa stopera');
+    //wykonywane funckcje
+    console.timeEnd('nazwa stopera');
+    //shows time needed to proccess function/fetching data/etc.
+
+    // table to display arrays
+
+    console.table();
+
+  </script>
+</body>
+</html>
